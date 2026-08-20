@@ -37,8 +37,22 @@ for the format. Open an issue or PR here including:
 Indicators ship only through signed releases; maintainers verify every entry before
 it is signed.
 
+## Repository layout
+
+- [`bundle-src/`](bundle-src/) — the bundle's source data, one file per
+  section (`known-bad.json`, `override-phrases.json`, `popular-packages.json`,
+  plus optional `kb-entries.json` / `rules.json`). **This is what PRs edit.**
+- [`scripts/build-bundle.mjs`](scripts/build-bundle.mjs) — assembles
+  `dist/codegate-content.json` from `bundle-src/`, omitting empty sections.
+- [`scripts/sign-bundle.mjs`](scripts/sign-bundle.mjs) — produces the detached
+  Ed25519 signature (maintainers only; requires the offline private key).
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — how to submit indicators and other
+  content.
+- [`RELEASING.md`](RELEASING.md) — the maintainer build → sign → release flow.
+
 ## Status
 
-No releases yet — the first signed bundle will be published once publisher-key
-setup completes in the main repo. Until then, CodeGate installs use their bundled
-content (the scanner's default, fail-closed behavior).
+No releases yet — the first signed bundle ships once the publisher public key
+is pinned in the main repo (`src/content/publisher-key.ts`). Until then,
+CodeGate installs use their bundled content (the scanner's default,
+fail-closed behavior).
