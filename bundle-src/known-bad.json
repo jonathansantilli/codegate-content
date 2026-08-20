@@ -1,6 +1,12 @@
 {
-  "file_sha256": [],
+  "file_sha256": [
+    "sha256:08e78bad656637b435699ff3ed32de2665b44a270de51fc7e98163f476b3e7a9",
+    "sha256:891c8c188060c517891c1d5b2e564edc898fd7b8097ec70cbb2da0bafca6a5b3"
+  ],
   "package_names": [],
   "url_patterns": [],
-  "finding_fingerprints": []
+  "finding_fingerprints": [
+    "sha256:4546a522775b0d74703db656fc8edb9055f98505571d915464f07a02e3899983",
+    "sha256:44cf142d0695a8312fa666a7c232b53d69f72f0ba4e56a6ef788b7fc2300661c"
+  ]
 }
